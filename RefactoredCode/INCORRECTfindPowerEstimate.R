@@ -11,14 +11,14 @@ findPowerEstimate <- function(simList){
     
     pvals <- rep(NA, numSims)
     for (i in 1:numSims){
-      pvals[i] <- INCORRECTrunOneSimulationFishers(paramList)
+      pvals[i] <- runOneSimulationFishers(paramList)
     }
     
   }else if (statistic=='minp'){
     
     pvals <- rep(NA, numSims)
     for (i in 1:numSims){
-      pvals[i] <- runOneSimulationMinP(paramList)
+      pvals[i] <- INCORRECTrunOneSimulationMinP(paramList)
     }
     
   }else if (statistic=='sumstat'){
