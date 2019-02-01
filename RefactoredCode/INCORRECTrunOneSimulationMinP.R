@@ -1,4 +1,4 @@
-runOneSimulationMinP <- function(paramList){
+INCORRECTrunOneSimulationMinP <- function(paramList){
   
   # deconstructing paramList to work with these functions. 
   paramList <- paramList[[1]]

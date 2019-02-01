@@ -1,4 +1,4 @@
-findPowerEstimate <- function(simList){
+INCORRECTfindPowerEstimate <- function(simList){
   # options for statistic are 'fishers', 'sumstat', 'sumsq' or 'minp', all must 
   # be lower case
   

@@ -1,4 +1,4 @@
-findStage2PvalfromPvals <- function(truePvals, empiricalPvals, aggregatingFunction){
+INCORRECTfindStage2PvalfromPvals <- function(truePvals, empiricalPvals, aggregatingFunction){
   
   # empiricalPvals has dimensions numTests X numPerms
   # we're evaluating for each permutation, then comparing the truePvals to 
