@@ -5,7 +5,7 @@
 date
 echo ""
 R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/replicationTest.txt 2>&1 << EOF
-source('~/Pathways2019/RunningRefactoredCode/runSimBeaker.R')
+source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/replicationTestCorrected.csv')
 
 EOF
