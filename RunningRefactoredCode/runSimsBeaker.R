@@ -3,7 +3,7 @@ library(parallel)
 
 # for runnning on server
 sourceDirectory("~/Pathways2019/RefactoredCode")
-source("~/Pathways2019/RunningRefactoredCode/createSimList.R")
+
 
 
 # Using mclapply to efficiently run all simulations on the parameters created by 

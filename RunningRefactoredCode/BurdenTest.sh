@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -J VCReplicationTest
+#SBATCH -J BurdenTest
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ruby_fore@alumni.brown.edu
 date
 echo ""
-R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/replicationTest.txt 2>&1 << EOF
+R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/BurdenTest.txt 2>&1 << EOF
 source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 
 # risk ratio or vector of risk ratios
@@ -20,7 +20,7 @@ perms = 1000
 # nubmer of SNVs
 snps <- 256
 # type of stage 1 test
-firstStageTest = 'VarianceComponents'
+firstStageTest = 'Burden'
 
 # create the matrix 
 equalSSvariedRR <- expand.grid(rr_var, n, set_sizes,  snps, maf, perms, firstStageTest) 
@@ -35,6 +35,7 @@ simList.df <- expand.grid(equalSS.list, statistics, 10)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))
-writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCReplicationTest.csv')
+
+writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/BurdenTest.csv')
 
 EOF
