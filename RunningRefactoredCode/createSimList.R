@@ -12,19 +12,21 @@ maf = .05
 perms = 1000
 # nubmer of SNVs
 snps <- 256
+# type of stage 1 test
+firstStageTest = 'Burden'
 
 
 
 # create the matrix 
-equalSSvariedRR <- expand.grid(rr_var, n, set_sizes,  snps, maf, perms) 
+equalSSvariedRR <- expand.grid(rr_var, n, set_sizes,  snps, maf, perms, firstStageTest) 
 # name various columns appropriately 
-names(equalSSvariedRR) <- c("RR","n", "setSize", "numSnp", "MAF", "numPerms")
+names(equalSSvariedRR) <- c("RR","n", "setSize", "numSnp", "MAF", "numPerms", "firstStageTest")
 
 equalSS.list <- split(equalSSvariedRR, seq(nrow(equalSSvariedRR)))
 
 # now combining these lists with statistics
 
-statistics <- c('fishers', 'minp', 'sumstat', 'sumsq')
+statistics <- c('fishers', 'minp', 'sumstat', 'sumsq', 'bonferroni')
 simList.df <- expand.grid(equalSS.list, statistics, 10^3)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 

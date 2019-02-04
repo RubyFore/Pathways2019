@@ -1,4 +1,4 @@
-runOneSimulationSumSq <- function(paramList){
+runOneSimulationBonferroni <- function(paramList){
   # deconstructing paramList to work with these functions. 
   paramList <- paramList[[1]]
   RR=paramList$RR[[1]]
@@ -26,10 +26,14 @@ runOneSimulationSumSq <- function(paramList){
     testStats <- calculateStageOneBurdenTestOnPerms(MLElist[[1]], MLElist[[2]], numPerms, setSize, numTests)
   }
   
-  # finding pval through comparison to permuted data for true test statistic
-  finalPval <- findStage2PvalFromTestStats(trueTestStat, testStats, sumsq)
+  # finding pvals through comparison to permuted data for true test statistic. 
+  # Then divide p value by numtests
+  finalPval <- findStage2PvalFromTestStats(trueTestStat, testStats, sumstat)
+  pvalSignificant <- (mean(c(trueTestStat, testStats) >= trueTestStat)/numTests)>=1
   
-  return (finalPval)
+  
+  mean(c(trueTestStat[[i]], testStats[i,])>=trueTestStats[[i]])
+  return (pvalSignificant)
   
   
 }

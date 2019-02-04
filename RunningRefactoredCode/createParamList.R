@@ -6,6 +6,8 @@ MAF = 0.05
 setSize = rep(1028/16, 16)
 numPerms=10^4
 numTests=length(setSize)
+firstStageTest = 'burden'
 
-paramList <- list(n, numSnp, RR, MAF, setSize, numPerms)
-names(paramList) <- c('n', 'numSnp', 'RR', 'MAF', 'setSize', 'numPerms')
+paramList <- list(n, numSnp, RR, MAF, setSize, numPerms, firstStageTest)
+names(paramList) <- c('n', 'numSnp', 'RR', 'MAF', 'setSize', 'numPerms', 
+                      'firstStageTest')

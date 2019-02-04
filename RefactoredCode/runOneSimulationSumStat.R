@@ -8,6 +8,7 @@ runOneSimulationSumStat <- function(paramList){
   numPerms=paramList$numPerms
   setSize=paramList$setSize[[1]]
   numTests=length(setSize)
+  firstStageTest = paramList$firstStageTest
   
   dataList <- simulateData(RR, MAF, n, numSnp) # first element is snp data, 2nd is phens
   perms <- permutePhenotypes(dataList[[2]], numPerms, n)
@@ -16,8 +17,14 @@ runOneSimulationSumStat <- function(paramList){
   MLElist <- findMLEofAlleleFreq(dataList[[1]], perms, numTests, numPerms)
   
   # Finding test statistics, for true data as well as permuted data 
-  trueTestStat <- calcVCTestStatOnTrueData(dataList[[2]], dataList[[1]], setSize, numTests)
-  testStats <- calculateStageOneVCTestOnPerms(MLElist[[1]], MLElist[[2]], numPerms, setSize, numTests)
+  if (firstStageTest == 'VarianceComponents'){
+    trueTestStat <- calcVCTestStatOnTrueData(dataList[[2]], dataList[[1]], setSize, numTests)
+    testStats <- calculateStageOneVCTestOnPerms(MLElist[[1]], MLElist[[2]], numPerms, setSize, numTests)
+    
+  } else if (firstStageTest == 'Burden'){
+    trueTestStat <- calcBurdenTestStatOnTrueData(dataList[[2]], dataList[[1]], setSize, numTests)
+    testStats <- calculateStageOneBurdenTestOnPerms(MLElist[[1]], MLElist[[2]], numPerms, setSize, numTests)
+  }
   
   # finding pval through comparison to permuted data for true test statistic
   finalPval <- findStage2PvalFromTestStats(trueTestStat, testStats, sumstat)

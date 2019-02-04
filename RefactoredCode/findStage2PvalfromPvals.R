@@ -6,7 +6,12 @@ findStage2PvalfromPvals <- function(truePvals, empiricalPvals, aggregatingFuncti
   
   nullSk <- apply(empiricalPvals, 2, aggregatingFunction)
   trueStage2Pval <- aggregatingFunction(truePvals)
-  finalPval <- mean(c(nullSk, trueStage2Pval) >= trueStage2Pval)
+  if (as.character(substitute(aggregatingFunction)) == 'Fishers'){
+    finalPval <- mean(c(nullSk, trueStage2Pval) >= trueStage2Pval)
+  }else if (as.character(substitute(aggregatingFunction)) == 'min'){
+    finalPval <- mean(c(nullSk, trueStage2Pval) <= trueStage2Pval)
+  }
+ 
   
   return (finalPval)
   
