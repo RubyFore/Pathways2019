@@ -24,10 +24,10 @@ testEqualSS.list <- split(equalSSvariedRR, seq(nrow(equalSSvariedRR)))
 
 # now combining these lists with statistics
 
-statistics <- c('fishers', 'minp', 'sumstat', 'sumsq')
-testSimList.df <- expand.grid(testEqualSS.list, statistics, 10^3)
+statistics <- c('fishers', 'minp', 'sumstat', 'sumsq', 'bonferroni')
+testSimList.df <- expand.grid(testEqualSS.list, statistics, 10)
 names(testSimList.df) <- c('paramList', 'statistic', 'numSims')
 
-testSimList <- split(testSimList.df, seq(nrow(testSimList.df)))
+SimList <- split(testSimList.df, seq(nrow(testSimList.df)))
 
 
