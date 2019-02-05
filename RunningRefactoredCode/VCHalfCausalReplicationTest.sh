@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #SBATCH -J VCHalfCausalReplicationTest
 #SBATCH --mail-type=ALL
@@ -13,7 +12,7 @@ source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 rr_var <- list(c(rep(1,8), c(1.25, rep(1, 6), 1.25)))
 #set_sizes <- list(c(rep(16, 16)), c(32, rep(16, 14)), c(64, rep(16, 12)), c(128, rep(16, 8)), c(256),)
 set_sizes <- list(rep(2,128), rep(4, 64), rep(8, 32), rep(16,16), rep(32, 8), rep(64, 4), rep(128,2), c(256))
-n = 10
+n = 1000
 maf = .05
 perms = 1000
 snps <- 256

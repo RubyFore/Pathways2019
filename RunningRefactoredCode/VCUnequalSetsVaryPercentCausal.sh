@@ -39,6 +39,6 @@ simList.df <- expand.grid(equalSS.list, statistics, 10^3)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))
-writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCUnequalSetsVaryPercentCausal.csv')
+writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCUnequalSetsVaryPercentCausal2.csv')
 
 EOF
