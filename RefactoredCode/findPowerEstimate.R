@@ -48,5 +48,5 @@ findPowerEstimate <- function(simList){
     powerEstimate <- mean(pvalSignificant)
   }
   
-  return ( powerEStimate )
+  return ( powerEstimate )
 }

@@ -13,7 +13,7 @@ perms = 1000
 # nubmer of SNVs
 snps <- 256
 # type of stage 1 test
-firstStageTest = 'Burden'
+firstStageTest = 'VarianceComponents'
 
 
 
@@ -27,7 +27,7 @@ equalSS.list <- split(equalSSvariedRR, seq(nrow(equalSSvariedRR)))
 # now combining these lists with statistics
 
 statistics <- c('fishers', 'minp', 'sumstat', 'sumsq', 'bonferroni')
-simList.df <- expand.grid(equalSS.list, statistics, 10^3)
+simList.df <- expand.grid(equalSS.list, statistics, 10)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))

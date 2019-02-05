@@ -31,8 +31,6 @@ runOneSimulationBonferroni <- function(paramList){
   finalPval <- findStage2PvalFromTestStats(trueTestStat, testStats, sumstat)
   pvalSignificant <- (mean(c(trueTestStat, testStats) >= trueTestStat)/numTests)>=1
   
-  
-  mean(c(trueTestStat[[i]], testStats[i,])>=trueTestStats[[i]])
   return (pvalSignificant)
   
   

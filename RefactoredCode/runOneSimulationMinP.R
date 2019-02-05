@@ -28,8 +28,8 @@ runOneSimulationMinP <- function(paramList){
   }
   
   # Finding pvalues 
-  truePvals <- calculatePvalOnTrueData(testStatsNew, trueTestStat, numTests)
-  permPvals <- calcPvalOnPerms(testStatsNew, numPerms, numTests)
+  truePvals <- calculatePvalOnTrueData(testStats, trueTestStat, numTests)
+  permPvals <- calcPvalOnPerms(testStats, numPerms, numTests)
   
   # calculating significance of combined p-value
   return( findStage2PvalfromPvals(truePvals, permPvals, min))
