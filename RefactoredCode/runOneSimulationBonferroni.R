@@ -28,10 +28,13 @@ runOneSimulationBonferroni <- function(paramList){
   
   # finding pvals through comparison to permuted data for true test statistic. 
   # Then divide p value by numtests
-  finalPval <- findStage2PvalFromTestStats(trueTestStat, testStats, sumstat)
-  pvalSignificant <- (mean(c(trueTestStat, testStats) >= trueTestStat)/numTests)>=1
+  pvalSignificant <- rep(NA, numTests)
+  for (i in 1:numTests){
+    pvalSignificant[i] <- (mean(c(trueTestStat[i], testStats[i,]) >= trueTestStat[i]))<=(0.05/numTests)
+  }
   
-  return (pvalSignificant)
+  
+  return (sum(pvalSignificant)>=1)
   
   
 }
