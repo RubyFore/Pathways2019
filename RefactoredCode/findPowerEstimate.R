@@ -39,7 +39,10 @@ findPowerEstimate <- function(simList){
     # This is a true/false value because we are really testing whether one or more 
     # tests has a significant pval when divided by numTests
     pvalSignificant <- rep(NA, numSims)
-    pvalSignificant <- runOneSimulationBonferroni(paramList) 
+    for (i in 1:numSims){
+      pvalSignificant[[i]] <- runOneSimulationBonferroni(paramList) 
+    }
+    
   }
   
   if (statistic != 'bonferroni'){
