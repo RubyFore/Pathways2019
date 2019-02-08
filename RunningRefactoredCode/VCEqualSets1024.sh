@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J VCEqualTests1024
+#SBATCH -J VCEqualSets1024
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ruby_fore@alumni.brown.edu
 date
@@ -18,7 +18,7 @@ maf = .05
 # number of permutations
 perms = 1000
 # nubmer of SNVs
-snps <- 1028
+snps <- 1024
 # type of stage 1 test
 firstStageTest = 'VarianceComponents'
 

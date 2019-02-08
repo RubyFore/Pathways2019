@@ -14,7 +14,7 @@ set_sizes <- list(rep(4, 256), rep(8, 128), rep(16,64), rep(32, 32), rep(64, 16)
 n = 1000
 maf = .05
 perms = 1000
-snps <- 256
+snps <- 1024
 
 
 # type of stage 1 test
