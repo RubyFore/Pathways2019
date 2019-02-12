@@ -8,7 +8,7 @@ R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/VCOneVariant1024.txt 2>&
 source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 
 #define parameter frame
-rr_var <- list(c(rep(1,511), 1.75, rep(1,512)))
+rr_var <- list(c(rep(1,511), 2.25, rep(1,512)))
 set_sizes <- list(rep(4, 256), rep(8, 128), rep(16,64), rep(32, 32), rep(64, 16), rep(128,8), rep(256,4), rep(512,2), (1024))
 n = 1000
 maf = .05
@@ -32,6 +32,6 @@ simList.df <- expand.grid(equalSS.list, statistics, 10^3)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))
-writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCOneVariant1024.csv')
+writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCOneVariant1024.RData')
 
 EOF
