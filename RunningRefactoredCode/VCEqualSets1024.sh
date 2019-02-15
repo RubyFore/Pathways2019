@@ -8,7 +8,7 @@ R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/VCEqualSets1024.txt 2>&1
 source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 
 # risk ratio or vector of risk ratios
-rr_var <- list(c(rep(1, 7), 1.1))
+rr_var <- list(c(rep(1, 7), 1.15))
 # list of vectors of set sizes
 set_sizes <- list(rep(4, 256), rep(8, 128), rep(16,64), rep(32, 32), rep(64, 16), rep(128,8), rep(256,4), rep(512,2), (1024))
 # cases + controls
@@ -35,6 +35,6 @@ simList.df <- expand.grid(equalSS.list, statistics, 10^3)
 names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))
-writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCEqualSets1024.RData')
+writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/VCEqualSets1024RR1.15.RData')
 
 EOF
