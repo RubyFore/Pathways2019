@@ -16,7 +16,7 @@ writePowerDFToFile <- function(filepath){
   # powerDF <- data.frame(matrix(unlist(results), nrow=8, ncol=5))
   # powerDF <- cbind(c(128, 64, 32,16,8,4,2,1), powerDF)
   # names(powerDF) <- c('numTests', 'fishers', 'minp', 'sumstat', 'sumsq', 'bonferroni')
-  write.table(results, file=filepath)
+  save(results, file=filepath)
 }
 
 
