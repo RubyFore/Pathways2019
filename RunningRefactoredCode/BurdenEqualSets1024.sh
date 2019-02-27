@@ -8,7 +8,7 @@ R --no-save > ~/Pathways2019/Simulations/OutputTxtFiles/BurdenEqualSets1024.txt 
 source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 
 # risk ratio or vector of risk ratios
-rr_var <- list(c(rep(1, 7), 1.25))
+rr_var <- list(c(rep(1, 7), 1.15))
 # list of vectors of set sizes
 set_sizes <- list(rep(4, 256), rep(8, 128), rep(16,64), rep(32, 32), rep(64, 16), rep(128,8), rep(256,4), rep(512,2), (1024))
 # cases + controls
