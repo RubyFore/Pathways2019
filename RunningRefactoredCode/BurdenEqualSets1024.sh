@@ -36,6 +36,6 @@ names(simList.df) <- c('paramList', 'statistic', 'numSims')
 
 simList <- split(simList.df, seq(nrow(simList.df)))
 
-writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/BurdenEqualSets1024.RData')
+writePowerDFToFile('~/Pathways2019/Simulations/PowerDFs/BurdenEqualSets1024RR1.15.RData')
 
 EOF
