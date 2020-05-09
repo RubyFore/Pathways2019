@@ -9,10 +9,10 @@ source('~/Pathways2019/RunningRefactoredCode/runSimsBeaker.R')
 
 
 
-# adjusting the percent causal in unequal set sizes, 1/8 vs 7/8
+# adjusting the percent causal in unequal set sizes, 1/4 vs 3/4
 
 #define parameter frame
-rr_var <- list(c(rep(1, 128), rep(1.15, 128), rep(1,768)), 
+rr_var <- list(c(rep(1, 128), rep(1, 768), rep(1.15, 128)), 
                c(rep(1.15,16), rep(1, 112),  rep(1,784),rep(1.15, 112)),
                c(rep(1.15, 32), rep(1,96), rep(1,800), rep(1.15, 96)), 
                c(rep(1.15, 48), rep(1,80), rep(1, 816), rep(1.15, 80)),
